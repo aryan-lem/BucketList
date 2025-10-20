@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  redis:
+    host: ${SPRING_REDIS_HOST:localhost}
+    port: ${SPRING_REDIS_PORT:6379}
+  data:
+    redis:
+      repositories:
+        enabled: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.data.redis: DEBUG
+    io.lettuce: DEBUG
+    aryan_lem.BucketList: DEBUG
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    access-exp-ms: ${JWT_ACCESS_EXP_MS}
+    refresh-exp-ms: ${JWT_REFRESH_EXP_MS}
